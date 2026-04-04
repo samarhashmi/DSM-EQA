@@ -120,7 +120,7 @@ The QA benchmark was constructed through three sequential stages:
 
 2. Seventy-two question templates (12 per category) were instantiated with  scenario-specific parameters spanning factual retrieval through multi-step  reasoning.
 
-3. Three certified grid operators (mean experience 11 ± 3 years) independently  reviewed every candidate pair for physical feasibility and operational  realism, discarding any pair failing either criterion (Cohen's κ = 0.79).  The final benchmark comprises 23% directly human-authored questions drawn from anonymised operator query logs and 77% operator-validated template items.
+3. Three certified grid operators independently  reviewed every candidate pair for physical feasibility and operational  realism, discarding any pair failing either criterion (Cohen's κ = 0.79).  The final benchmark comprises 23% directly human-authored questions drawn from anonymised operator query logs and 77% operator-validated template items.
 
 ### Column reference (QA benchmark files)
 
@@ -165,7 +165,7 @@ pip install -r requirements.txt
 
 **Operator:** What is the predicted peak demand for the Southwest region on 14 July 2023?
 
-**DSM-EQA:** The predicted peak demand for the Southwest region on 14 July 2023 is 4,823 MW, driven by elevated temperatures and high cooling loads during the 13:00–17:00 afternoon window. Total generation is scheduled at 4,850 MW to cover the ±5% forecast uncertainty band. Voltage profiles across all 118 monitored buses remain within 0.95–1.05 pu and no thermal violations are present.
+**DSM-EQA:** The predicted peak demand for the Southwest region on 14 July 2023 is 4,823 MW, driven by elevated temperatures and high cooling loads during the 13:00–17:00 afternoon window. Total generation is scheduled at 4,850 MW to cover the ±5% forecast uncertainty band. Voltage profiles across all 118 monitored buses remain within 0.95-1.05 pu and no thermal violations are present.
 
 `[p_gen=4850.2 MW | v_min=0.971 pu | u_line=0.84 pu ✓]`
 
@@ -185,13 +185,15 @@ pip install -r requirements.txt
 
 **Operator:** Cascading voltage collapse is imminent on the Northwestern interface voltages below 0.92 pu on four buses. What emergency actions prevent a blackout?
 
-**DSM-EQA:** Blackout prevention requires immediate sequential execution:
-(1) shed 380 MW in load zones NW-2 and NW-3 within 60 seconds;
-(2) insert 320 MVAR of reactive compensation within 90 seconds;
-(3) reduce power imports from the South by 240 MW within 3 minutes;
-(4) arm automatic voltage control relays on buses 87, 89, and 91.
-Post-intervention: lowest bus voltage stabilises at 0.953 pu — above the
-0.95 pu security limit.
+DSM-EQA: Blackout prevention requires immediate sequential execution:
+
+1. Shed 380 MW in load zones NW-2 and NW-3 within 60 seconds
+2. Insert 320 MVAR of reactive compensation within 90 seconds
+3. Reduce power imports from the South by 240 MW within 3 minutes
+4. Arm automatic voltage control relays on buses 87, 89, and 91
+
+Post-intervention:
+- Lowest bus voltage stabilises at 0.953 pu, above the 0.95 pu security limit
 
 `[p_gen=4218.4 MW | v_min=0.953 pu | u_line=0.97 pu ✓]`
 
@@ -202,7 +204,6 @@ Post-intervention: lowest bus voltage stabilises at 0.953 pu — above the
 | Parameter | Value |
 |---|---|
 | Number of evaluators | 5 certified power system engineers |
-| Mean experience | 14 ± 4 years |
 | Evaluation protocol | Blinded to model identity |
 | Inter-rater agreement | Krippendorff's α = 0.76 |
 | Operator decision alignment | 91% on three real grid events |
