@@ -224,14 +224,4 @@ Post-intervention:
 
 ---
 
-## License
-
-| Component | License |
-| Operator query logs | Anonymised under utility data sharing agreement — raw logs not redistributable |
-
----
-
-## Contact
-
-Samar Abbas `samar@swust.edu`
-School of Information and Control Engineering, SWUST, Mianyang, China
+ 
