@@ -227,9 +227,6 @@ Post-intervention:
 ## License
 
 | Component | License |
-|---|---|
-| Dataset (CSV files) | CC BY 4.0 |
-| Code (src/) | MIT |
 | Operator query logs | Anonymised under utility data sharing agreement — raw logs not redistributable |
 
 ---
