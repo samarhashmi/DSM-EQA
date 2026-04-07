@@ -39,12 +39,12 @@ DSM-EQA achieves state-of-the-art performance across all evaluation metrics on t
 
 | Task Category | DSA (%) | Notes |
 |---|---|---|
-| Demand Forecasting | 91.2 | Best performance — effective encoding of temporal dependencies and load patterns |
-| Supply Optimization | 88.7 | Strong — benefits from multimodal physics grounding |
-| Market Analysis | 86.4 | Competitive — leverages domain-adaptive pretraining |
-| Grid Operations | 87.9 | Reliable — topology encoding supports dispatch reasoning |
-| Renewable Integration | 85.3 | Robust — weather modality integration is key |
-| Anomaly Detection | 83.1 | Lowest — challenging fine-grained fault discrimination shared by all models |
+| Demand Forecasting | 91.2 | Best performance effective encoding of temporal dependencies and load patterns |
+| Supply Optimization | 88.7 | Strong benefits from multimodal physics grounding |
+| Market Analysis | 86.4 | Competitive leverages domain-adaptive pretraining |
+| Grid Operations | 87.9 | Reliable topology encoding supports dispatch reasoning |
+| Renewable Integration | 85.3 | Robust weather modality integration is key |
+| Anomaly Detection | 83.1 | Lowest challenging fine-grained fault discrimination shared by all models |
 
 ---
 
@@ -225,7 +225,7 @@ pip install -r requirements.txt
 
 ## QA Examples
 
-### Demand Forecasting-Factual
+### Demand Forecasting --- Factual
 
 **Operator:** What is the predicted peak demand for the Southwest region on 14 July 2023?
 
@@ -235,7 +235,7 @@ pip install -r requirements.txt
 
 ---
 
-### Grid Operations-Multi-Step
+### Grid Operations --- Multi-Step
 
 **Operator:** N-1 contingency on line 47-69. What generation re-dispatch restores security?
 
@@ -245,7 +245,7 @@ pip install -r requirements.txt
 
 ---
 
-### Anomaly Detection-Critical Multi-Step
+### Anomaly Detection --- Critical Multi-Step
 
 **Operator:** Cascading voltage collapse is imminent on the Northwestern interface voltages below 0.92 pu on four buses. What emergency actions prevent a blackout?
 
@@ -260,8 +260,6 @@ Post-intervention:
 - Lowest bus voltage stabilises at 0.953 pu, above the 0.95 pu security limit
 
 
-
-
 ## Evaluation Metrics
 
 | Metric | Definition |
@@ -270,8 +268,8 @@ Post-intervention:
 | **PCR** (Physics Compliance Rate) | Percentage of responses where all three physical constraints (power balance, voltage, thermal) are satisfied |
 | **NA** (Numerical Accuracy) | Mean relative error between predicted and ground-truth numerical indicators |
 | **HR** (Hallucination Rate) | Percentage of responses flagged for physically impossible values, factually incorrect claims, or fabricated grid entities |
-| **BLEU** | Bilingual Evaluation Understudy — measures lexical fidelity |
-| **ROUGE-L** | Recall-Oriented Understudy — longest common subsequence for overlap |
+| **BLEU** | Bilingual Evaluation Understudy measures lexical fidelity |
+| **ROUGE-L** | Recall-Oriented Understudy longest common subsequence for overlap |
 | **BERTScore** | Contextual embedding similarity for semantic alignment |
 
 ---
@@ -308,4 +306,4 @@ Post-intervention:
 }
 ```
 
-
+<span style="font-size:10px; opacity:0.6;">786-92-110-118</span>
