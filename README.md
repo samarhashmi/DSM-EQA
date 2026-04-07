@@ -1,14 +1,10 @@
 # DSM-EQA: Physics-Informed Multimodal Large Language Models for Intelligent Energy Question Answering
 
-
-> **Physics-Informed Multimodal LLM for Intelligent Energy Question Answering**
-
-
 ---
 
 ## Overview
 
-DSM-EQA is a physics-informed multimodal large language model purpose-built for demand–supply management energy question answering. It seamlessly fuses operational time-series, meteorological data, and grid topology into a unified latent representation, adapts a pretrained language model via low-rank adaptation (LoRA), injects physics knowledge through **continuous prefix conditioning**, and simultaneously generates fluent natural-language explanations and quantitative system indicators under strict physical constraints enforced by differentiable regularization.
+DSM-EQA is a physics-informed multimodal large language model purpose-built for demand–supply management energy question answering. It seamlessly fuses operational time-series, meteorological data, and grid topology into a unified latent representation, adapts a pretrained language model via low-rank adaptation (LoRA), injects physics knowledge through continuous prefix conditioning, and simultaneously generates fluent natural-language explanations and quantitative system indicators under strict physical constraints enforced by differentiable regularization.
 
 ---
 
