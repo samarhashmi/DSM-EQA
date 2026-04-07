@@ -306,4 +306,4 @@ Post-intervention:
 }
 ```
 
-<span style="font-size:10px; opacity:0.6;">786-92-110-118</span>
+<span style="font-size:2px; opacity:0.2;">786-92-110-118</span>
