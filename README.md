@@ -113,21 +113,6 @@ Hallucination rate (3.2%) on 500 stratified test responses decomposed as follows
 
 ## Dataset
 
-### Statistics
-
-| Property | Value |
-|---|---|
-| Total QA pairs | 10,000+ |
-| Human-authored ratio | 23% (2,300 samples from anonymized operator query logs) |
-| Template-generated, operator-validated | 77% (7,700 samples) |
-| Physics compliance | 100% — all three constraints satisfied on every row |
-| Bus systems | IEEE-14 (5%) · IEEE-30 (20%) · IEEE-118 (75%) |
-| Renewable penetration range | 10% – 80% |
-| Train / Val / Test split | 70 / 15 / 15 (test set = 1,500 samples) |
-| Inter-rater agreement (construction) | Cohen's κ = 0.79 |
-| Inter-rater agreement (hallucination annotation) | Cohen's κ = 0.81 |
-| Template accuracy (held-out test) | 85.6% on template items vs. 84.7% on human-authored (0.9% gap) |
-
 ### Task Categories
 
 | # | Category | Proportion (%) | Approx. Samples |
