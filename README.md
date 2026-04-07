@@ -303,7 +303,7 @@ Post-intervention:
 ## Citation
 
 ```bibtex
-@article{abbas2024dsmeqa,
+@article{abbas2026dsmeqa,
   title   = {Physics-Informed Multimodal Large Language Models for Intelligent Energy Question Answering},
   author  = {Samar Abbas and Waqas Amin},
   journal = {Results in Engineering},
