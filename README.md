@@ -8,35 +8,7 @@
 
 ## Overview
 
-DSM-EQA is a physics-informed multimodal large language model purpose-built for **demand–supply management energy question answering**. It seamlessly fuses operational time-series, meteorological data, and grid topology into a unified latent representation, adapts a pretrained language model via **low-rank adaptation (LoRA)**, injects physics knowledge through **continuous prefix conditioning**, and simultaneously generates fluent natural-language explanations and quantitative system indicators under strict physical constraints enforced by differentiable regularization.
-
-The framework addresses a critical gap at the intersection of three paradigms: (1) general-purpose LLMs that are linguistically capable but **physics-blind**; (2) domain-adapted language models limited to single text modality with **narrow task scopes**; and (3) physics-informed models that enforce physical laws but are **entirely mute** — unable to generate natural language or be queried conversationally. DSM-EQA is the first system to close all three gaps concurrently.
-
-
-## Architecture
-
-DSM-EQA comprises six tightly integrated modules forming a physics-aware multimodal pipeline:
-
-### 1. Multimodal Representation Encoding (MRE)
-A unified encoding module transforms heterogeneous physical and environmental observations into a shared latent representation (d = 768). Operational time-series are encoded via a **Transformer encoder** with masked mean pooling, meteorological features are projected through a **two-layer MLP**, and grid topology is encoded through a **3-layer graph neural network** (GNN). The final multimodal state is constructed via **cross-modal multi-head attention** (8 heads, d_k = 64), where temporal dynamics serve as Query and weather/topology embeddings form Keys and Values.
-
-### 2. Parameter-Efficient Language Adaptation (PELA)
-A pretrained LLaMA-2-7B backbone is specialized for energy-domain reasoning via **LoRA** (rank r = 16, α = 32, dropout = 0.05), constraining optimization to a low-dimensional subspace while preserving general linguistic knowledge. This enables domain specialization **without full model fine-tuning**.
-
-### 3. Physics-Conditioned Prompt Injection (PCPI)
-The fused multimodal embedding is transformed into **P = 20 continuous prefix tokens** via tanh projection and prepended to textual token embeddings, conditioning all layers of the language model on the physical system state throughout generation.
-
-### 4. Physics-Regularized Numerical Inference (PRNI)
-A two-layer MLP regression head (768 → 256 → 6) simultaneously predicts quantitative power system indicators **ŷ = [p_gen, p_load, p_loss, v_min, v_max, u_line]** under three differentiable physics penalty constraints, continuously guiding predictions toward physically admissible operating regions.
-
-### 5. Unified Multi-Objective Optimization (UMO)
-The entire framework is trained through joint optimization of linguistic fidelity, numerical accuracy, and physical consistency:
-
-**L_total = L_LM + λ_phys · L_phys + λ_num · L_num**
-
-
-### 6. Final Answer Generation (FAG)
-Conditioned on physics-guided prefix embeddings and textual tokens, the adapted language model produces the final natural-language response alongside the physically constrained numerical prediction, ensuring semantic and quantitative consistency.
+DSM-EQA is a physics-informed multimodal large language model purpose-built for demand–supply management energy question answering. It seamlessly fuses operational time-series, meteorological data, and grid topology into a unified latent representation, adapts a pretrained language model via low-rank adaptation (LoRA), injects physics knowledge through **continuous prefix conditioning**, and simultaneously generates fluent natural-language explanations and quantitative system indicators under strict physical constraints enforced by differentiable regularization.
 
 ---
 
